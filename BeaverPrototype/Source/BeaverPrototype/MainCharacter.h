@@ -1,0 +1,40 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "GameFramework/Character.h"
+#include "MainCharacter.generated.h"
+
+UCLASS()
+class BEAVERPROTOTYPE_API AMainCharacter : public ACharacter
+{
+	GENERATED_BODY()
+
+public:
+	// Sets default values for this character's properties
+	AMainCharacter();
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+private:
+	UPROPERTY(EditAnywhere)
+		UCameraComponent* PlayerCamera = nullptr;
+	UPROPERTY(EditAnywhere)
+		USpringArmComponent* CameraBoom = nullptr;
+
+
+	void MoveX(float value);
+	void MoveY(float value);
+	void LookYaw(float value);
+	void Dodge();
+	
+};
