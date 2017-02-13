@@ -60,3 +60,8 @@ Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+*.db
+BeaverPrototype/Intermediate/
+BeaverPrototype/Saved/
+BeaverPrototype/Binaries/Win64/BeaverPrototypeEditor.target
+BeaverPrototype/Binaries/
