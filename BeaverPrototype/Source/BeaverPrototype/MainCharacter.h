@@ -25,6 +25,16 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
+private:
+	UPROPERTY(EditAnywhere)
+		UCameraComponent* PlayerCamera = nullptr;
+	UPROPERTY(EditAnywhere)
+		USpringArmComponent* CameraBoom = nullptr;
+
+
+	void MoveX(float value);
+	void MoveY(float value);
+	void LookYaw(float value);
+	void Dodge();
 	
 };
