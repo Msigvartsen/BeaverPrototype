@@ -3,6 +3,10 @@
 #include "MainCharacter.h"
 
 
+<<<<<<< HEAD
+=======
+// Sets default values
+>>>>>>> 28f1eb51ebbe8340fa83cab74ab1dfd1fbdf8544
 AMainCharacter::AMainCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -10,22 +14,30 @@ AMainCharacter::AMainCharacter()
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->AttachTo(RootComponent);
 	PlayerCamera->AttachTo(CameraBoom);
+<<<<<<< HEAD
 
 	/*CursorToWorld = CreateDefaultSubobject<UDecalComponent>("CursorToWorld");
 	CursorToWorld->SetupAttachment(RootComponent);
 	CursorToWorld->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f).Quaternion());*/
+=======
+>>>>>>> 28f1eb51ebbe8340fa83cab74ab1dfd1fbdf8544
 }
 
 void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+<<<<<<< HEAD
 	GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
+=======
+	
+>>>>>>> 28f1eb51ebbe8340fa83cab74ab1dfd1fbdf8544
 }
 
 void AMainCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+<<<<<<< HEAD
 	FVector MouseLocation;
 	FVector MouseDirection;
 	GetWorld()->GetFirstPlayerController()->DeprojectMousePositionToWorld(MouseLocation, MouseDirection);
@@ -37,20 +49,29 @@ void AMainCharacter::Tick(float DeltaTime)
 	{
 		Stamina += 10.f * DeltaTime;
 	}	
+=======
+>>>>>>> 28f1eb51ebbe8340fa83cab74ab1dfd1fbdf8544
 }
 
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	InputComponent->BindAxis("MoveX", this, &AMainCharacter::MoveX);
+<<<<<<< HEAD
 	InputComponent->BindAxis("MoveY", this, &AMainCharacter::MoveY);
 	InputComponent->BindAction("Dodge", IE_Pressed, this, &AMainCharacter::Dodge);
 	InputComponent->BindAction("Melee", IE_Pressed, this, &AMainCharacter::Melee);
 	InputComponent->BindAction("Shoot", IE_Pressed, this, &AMainCharacter::Shoot);
+=======
+	InputComponent->BindAxis("MoveX", this, &AMainCharacter::MoveY);
+	InputComponent->BindAxis("LookYaw", this, &AMainCharacter::LookYaw);
+	InputComponent->BindAction("Dodge", IE_Pressed, this, &AMainCharacter::Dodge);
+>>>>>>> 28f1eb51ebbe8340fa83cab74ab1dfd1fbdf8544
 }
 
 void AMainCharacter::MoveX(float value)
 {
+<<<<<<< HEAD
 	AddMovementInput(FVector::ForwardVector, value);
 }
 
@@ -115,3 +136,22 @@ float AMainCharacter::GetHealth()
 {
 	return (Health / MaxHealth);
 }
+=======
+
+}
+
+void AMainCharacter::MoveY(float value)
+{
+
+}
+
+void AMainCharacter::LookYaw(float value)
+{
+
+}
+
+void AMainCharacter::Dodge()
+{
+
+}
+>>>>>>> 28f1eb51ebbe8340fa83cab74ab1dfd1fbdf8544

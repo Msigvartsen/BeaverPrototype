@@ -11,6 +11,7 @@ class BEAVERPROTOTYPE_API AMainCharacter : public ACharacter
 	GENERATED_BODY()
 
 public:
+<<<<<<< HEAD
 	AMainCharacter();
 	
 protected:
@@ -18,6 +19,20 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
+=======
+	// Sets default values for this character's properties
+	AMainCharacter();
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Called to bind functionality to input
+>>>>>>> 28f1eb51ebbe8340fa83cab74ab1dfd1fbdf8544
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
@@ -25,6 +40,7 @@ private:
 		UCameraComponent* PlayerCamera = nullptr;
 	UPROPERTY(EditAnywhere)
 		USpringArmComponent* CameraBoom = nullptr;
+<<<<<<< HEAD
 	
 	//Input Functions
 	void MoveX(float value);
@@ -52,4 +68,13 @@ private:
 		float GetStamina();
 	UFUNCTION(BlueprintCallable, Category = "Health", meta = (AllowPrivateAccess = true))
 		float GetHealth();
+=======
+
+
+	void MoveX(float value);
+	void MoveY(float value);
+	void LookYaw(float value);
+	void Dodge();
+	
+>>>>>>> 28f1eb51ebbe8340fa83cab74ab1dfd1fbdf8544
 };
