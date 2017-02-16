@@ -28,7 +28,7 @@ private:
 	UPROPERTY(EditAnywhere)
 		USpringArmComponent* CameraBoom = nullptr;
 
-	
+	//small change
 	//Input Functions
 	void MoveX(float value);
 	void MoveY(float value);

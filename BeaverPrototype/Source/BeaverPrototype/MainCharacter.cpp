@@ -38,7 +38,7 @@ void AMainCharacter::Tick(float DeltaTime)
 	FRotator NewRotation = FMath::RInterpConstantTo(GetActorRotation(),RotationAngle.Rotation(),DeltaTime,340.f);
 	GetWorld()->GetFirstPlayerController()->SetControlRotation(NewRotation);
 	//SetActorRotation(NewRotation);
-
+	//SmallChangeComment
 	//RotateToMousePosition();
 	//Sets Stamina Regen
 	if (Stamina < 100.f)
