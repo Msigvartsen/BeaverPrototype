@@ -20,7 +20,6 @@ void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
-	
 }
 
 void AMainCharacter::Tick(float DeltaTime)
@@ -48,7 +47,6 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	InputComponent->BindAction("Dodge", IE_Pressed, this, &AMainCharacter::Dodge);
 	InputComponent->BindAction("Melee", IE_Pressed, this, &AMainCharacter::Melee);
 	InputComponent->BindAction("Shoot", IE_Pressed, this, &AMainCharacter::Shoot);
-
 }
 
 void AMainCharacter::MoveX(float value)
