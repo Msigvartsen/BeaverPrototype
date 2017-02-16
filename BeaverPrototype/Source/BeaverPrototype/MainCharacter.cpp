@@ -20,6 +20,7 @@ void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
+	
 }
 
 void AMainCharacter::Tick(float DeltaTime)
