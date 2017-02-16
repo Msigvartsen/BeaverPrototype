@@ -26,10 +26,17 @@ void AMainCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	FVector MouseLocation;
-	FVector MouseDirection;
-	GetWorld()->GetFirstPlayerController()->DeprojectMousePositionToWorld(MouseLocation, MouseDirection);
-	SetActorRotation(FRotator(0, MouseDirection.Rotation().Yaw, 0));
+	// 2D mouse cords
+	float X, Y;
+	GetWorld()->GetFirstPlayerController()->GetMousePosition(X, Y);
+	FVector2D MouseLocation = FVector2D(X, Y);
+
+	// SetActorRotation(PlayerToCursor.Rotation());
+	const FVector2D ViewportSize = FVector2D(GEngine->GameViewport->Viewport->GetSizeXY());
+	const FVector2D  ViewportCenter = FVector2D(ViewportSize.X / 2, ViewportSize.Y / 2);
+	FVector2D MouseDirection = MouseLocation - ViewportCenter;
+	FVector RotationAngle = FVector(MouseDirection.X, MouseDirection.Y, 0);
+	SetActorRotation(RotationAngle.Rotation());
 
 	//RotateToMousePosition();
 	//Sets Stamina Regen
@@ -116,4 +123,7 @@ float AMainCharacter::GetHealth()
 	return (Health / MaxHealth);
 }
 
-
+int AMainCharacter::GetInt()
+{
+	return 2;
+}
