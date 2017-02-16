@@ -36,7 +36,11 @@ void AMainCharacter::Tick(float DeltaTime)
 	const FVector2D  ViewportCenter = FVector2D(ViewportSize.X / 2, ViewportSize.Y / 2);
 	FVector2D MouseDirection = MouseLocation - ViewportCenter;
 	FVector RotationAngle = FVector(MouseDirection.X, MouseDirection.Y, 0);
-	SetActorRotation(RotationAngle.Rotation());
+
+
+	FRotator NewRotation = FMath::RInterpConstantTo(GetActorRotation(),RotationAngle.Rotation(),DeltaTime,340.f);
+	GetWorld()->GetFirstPlayerController()->SetControlRotation(NewRotation);
+	//SetActorRotation(NewRotation);
 
 	//RotateToMousePosition();
 	//Sets Stamina Regen
