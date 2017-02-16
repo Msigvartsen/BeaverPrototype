@@ -11,9 +11,6 @@ AMainCharacter::AMainCharacter()
 	CameraBoom->AttachTo(RootComponent);
 	PlayerCamera->AttachTo(CameraBoom);
 
-	/*CursorToWorld = CreateDefaultSubobject<UDecalComponent>("CursorToWorld");
-	CursorToWorld->SetupAttachment(RootComponent);
-	CursorToWorld->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f).Quaternion());*/
 }
 
 void AMainCharacter::BeginPlay()
