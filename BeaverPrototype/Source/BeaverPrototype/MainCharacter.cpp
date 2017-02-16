@@ -20,7 +20,6 @@ void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	GetWorld()->GetFirstPlayerController()->bShowMouseCursor = true;
-	
 }
 
 void AMainCharacter::Tick(float DeltaTime)
@@ -118,4 +117,7 @@ float AMainCharacter::GetHealth()
 	return (Health / MaxHealth);
 }
 
-
+int AMainCharacter::GetInt()
+{
+	return 2;
+}

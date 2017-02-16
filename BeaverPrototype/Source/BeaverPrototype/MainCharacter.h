@@ -56,4 +56,5 @@ private:
 	UFUNCTION(BlueprintCallable, Category = "Health", meta = (AllowPrivateAccess = true))
 		float GetHealth();
 
+	int GetInt();
 };
